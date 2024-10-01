@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-bar{
+    background-color: antiquewhite;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+    
+}
+
+.nav-a{
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-anchors{
+    margin-left: 500px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.log-in{
+    background-color: rgb(6, 6, 125);
+    color: white;
+    border-width: 0.01cap;
+}
+
+.sign-up{
+    border-width: 0.01cap;
+    
+}
+
+button{
+    height: 50px;
+    width: 200px;
+}
+
+.nav-registration{
+    margin-right: 50px;
+    padding: 0px 0px 0px 100px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.hero-section{
+    height: 845px;
+    width: 100%;
+    
+}
+
+.hero-heading{
+    position: absolute;
+    top: 345px;
+    padding-left: 200px;
+}
+
+.main-intro-header{
+    font-size: 120px;
+}
+
+.main-intro-para{
+    font-size: 15px;
+    height: 150px;
+    width: 400px;
+    color: white;
+}
+
+.all-button-css{
+    background-color: rgb(6, 6, 125);
+    border-radius: 6pc;
+    color: white;
+    height: 60px;
+}
+
+.purpose-section{
+    height: 720px;
+    width: 100%;
+    display: flex;
+}
+
+.purpose-image{
+    height: 675px;
+    width: 700px;
+    background-color: rgba(207, 175, 175, 0.758);
+    margin: 70px 0px 0px 70px;
+    padding: 300px 100px;
+}
+
+.purpose-div{
+    height: 400px;
+    width: 500px;
+    margin: 70px 0px 0px 200px;
+}
+
+.purpose-header{
+    font-size: 120px;
+}
+
+.who-section{
+    width: 100%;
+    height: 900px;
+    padding: 70px 100px 300px 800px;
+}
+
+.green-box{
+    width: 700px;
+    height: 900px;
+    background-color: rgb(153, 192, 94);
+}
+
+.who-header{
+    height: 600px;
+    width: 800px;
+    margin-left: 150px;
+}
+
+.for-header{
+    font-size: 120px;
+    width: 800px;
+}
+
+.for-para{
+    width: 500px;
+}
+
+.who-buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.who-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 100px;
+    position: absolute;
+    top: 1700px;
+}
+
+.ai-div{
+    height: 500px;
+    margin-top: 300px;
+    margin-left: 100px;
+}
+
+.together{
+    font-size: 120px;
+}
+
+.ai-para{
+    height: 150px;
+    width: 600px;
+}
+
+
+
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-section{
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+    height: 500px;
+    width: 100%;
+    padding: 150px 400px 200px 150px;
+}
+
+.icons{
+    margin-top: 220px;
+    display: flex;
+    gap: 30px;
+}
