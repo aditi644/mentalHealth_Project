@@ -12,99 +12,117 @@
 </head>
 
 <body>
-    <div class="navigation-bar">
-        <div class="nav-anchors">
-            <a class="first nav-a" href="#">Home</a>
-            <a class="nav-a" href="#">Articles</a>
-            <a class="nav-a" href="#">Social Groups</a>
-            <a class="nav-a" href="#">Connect</a>
-            <a class="nav-a" href="#">About Us</a>
+    <header class="d-flex align-items-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+            <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none"></a>
+                <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
         </div>
-        <div class="nav-registration">
-            <button class="log-in">Log In</button>
-            <button class="sign-up">Sign Up</button>
-        </div>
-    </div>
-    <div class="hero-section">
-        <img src="./Images/playingFootball.png" alt="Trees" style="height: 845px; width: 100%;">
-        
-    </div>
-    <div class="hero-heading">
-        <p class="main-intro-header" style="color: aliceblue;">Your Safe Space For</p>
-        <p class="main-intro-header" style="color: rgb(97, 97, 210);">Mental Health Support</p>
-        <div class="main-intro-para">
-            <p>We’re glad you’re here. Taking the first step toward mental wellness ​is a courageous act, and we're here to support you every step of the ​way. Whether you're looking for resources, guidance, or just a safe ​space to explore your emotions, you’ve come to the right place.</p>
-        </div>
-        <button class="all-button-css">Know About Yourself</button>
-    </div>
-    <div class="purpose-section">
-        <div class="purpose-image">
-            <img src="./Images/thinkingMan.png" alt="Man Thinking" style="height: 350px; width: 500px;">
-        </div>
-        <div class="purpose-div">
-            <p class="purpose-header">Our Purpose</p>
-            <div class="purpose-para">
-                <p>We believe that mental health is just as ​important as physical health. Our goal is to provide ​accessible, reliable, and compassionate support for ​anyone seeking to improve their well-being. We offer ​tools, resources, and guidance to help you navigate the ​challenges of mental health in a way that suits your ​unique journey.</p>
-            </div>
-            <button class="all-button-css">Find Your Journey</button>
-        </div>
-    </div>
 
-    <div class="who-section">
-        <div class="green-box"></div>
-    </div>
-
-    <div class="who-div">
-        <div class="who-header">
-            <p class="for-header">Who the Website is For</p>
-            <div class="for-para">
-                <p>This platform is for anyone looking to prioritize their mental well-being. Whether you're ​dealing with anxiety, depression, burnout, or just want to take better care of your ​emotional health, we’re here to help. [Website Name] is a resource for people from all ​walks of life, offering practical tools and guidance to support your mental health ​journey.</p>
-            </div>
-            <div class="who-buttons">
-                <button class="all-button-css">Teenagers</button>
-                <button class="all-button-css" style="background-color: white; color: black;">Adults</button>
-            </div>
-        </div>
-        <img src="./Images/artDrawing.png" alt="Art Drawing" style="height: 400px; width: 400px; margin-top: 150px;">
-        <img src="./Images/handsTogether.png" alt="Hands Meeting" style="height: 400px; width: 500px; margin-left: 200px;">
-        <img src="./Images/playingFootball.png" alt="Playing Basketball" style="height: 400px; width: 500px;">
-    </div>
-
-    <div class="ai-div">
-        <p class="together">We Are Together</p>
-        <div class="ai-para">
-            <p>Our AI-powered counseling is available 24/7, providing a safe space for you to explore your thoughts and feelings at your ​own pace. Whether you're managing stress, anxiety, or simply need someone to talk to, our AI assistant is always here to ​listen, offer guidance, and help you navigate through your mental health journey.</p>
-        </div>
-        <button class="all-button-css">Self Help Activities</button>
-        
-    </div>
-
-    
-    
-    <div class="footer-section">
-        <ul>
-            <li>Contact Us</li>
-            <li>Terms and Conditions</li>
-            <li>Privacy</li>
-            <li>Make a Complaint</li>
-            <li>FAQs</li>
+        <!-- Use d-flex and align-items-center to make the nav horizontal -->
+        <ul class="col-md-6 col-md-auto mb-2 justify-content-center align-items-center mb-md-0 d-flex flex-wrap flex-row list-unstyled">
+            <li><a href="#" class="nav-link px-4 link-secondary">Home</a></li>
+            <li><a href="#" class="nav-link px-4">Support Groups</a></li>
+            <li><a href="#" class="nav-link px-4">Articles</a></li>
+            <li><a href="#" class="nav-link px-4">Expert Section</a></li>
+            <li><a href="#" class="nav-link px-4">About</a></li>
         </ul>
-        <ul>
-            <li>Register for Meetups</li>
-            <li>Share your Stories</li>
-            <li>Yoga Groups</li>
-            <li>Meditation Groups</li>
-            <p style="color: white; font-size: 20px;margin-top: 50px; margin-right: 50px;">Connect With Us
-                
-            </p>
+
+        <div class="col-md-3 text-end d-flex col-sm-12">
+            <button type="button" class="btn btn-outline-secondary me-2 px-5">Login</button>
+            <button type="button" class="btn btn-custom px-5">Sign-up</button>
+        </div>
+    </header>
+    
+    <div class="px-4 py-5 my-5 text-center">
+        <img class="d-block mx-auto mb-4" src="/Images/sadGirl.jpg" alt="" width="100%" >
+        <h1 class="display-5 fw-bold text-body-emphasis ">Your <span style="color: rgb(167, 150, 170);">Safe Space</span> for Mental Health Support</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">We’re glad you’re here. Taking the first step toward mental wellness is a courageous act, and we're here to support you every step of the way. Whether you're looking for resources, guidance, or just a safe space to explore your emotions, you’ve come to the right place.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-lg px-4 gap-3 btn-custom">Find Your Journey</button>
             
-        </ul>
-        <div class="icons">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-square-instagram"></i>
-            <i class="fa-brands fa-square-x-twitter"></i>
-        </div> 
-    </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid col-xxl-10 mx-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-4">
+            <img src="./Images/yogaMindfulness.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+          </div>
+          <div class="col-lg-8 col-md-10">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-5">The Power of Mindfulness</h1>
+            <p class="lead">Mindfulness can be a powerful tool for individuals struggling with mental instability. It helps ground the mind, fostering a sense of calm and clarity amidst emotional turbulence. By focusing on the present moment, mindfulness reduces anxiety and overthinking, offering relief from overwhelming thoughts. It encourages self-awareness and acceptance, allowing individuals to better understand their feelings without judgment. Over time, practicing mindfulness can lead to improved emotional regulation, increased resilience, and a stronger connection to inner peace, empowering people to navigate mental challenges with greater strength and balance.</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+              <button type="button" class="btn btn-custom btn-lg px-4 me-md-2">Teenagers</button>
+              <button type="button" class="btn btn-outline-secondary btn-lg px-4">Adults</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="container-fluid px-4 py-5 my-6">
+        <h1 class="display-5 fw-bold text-body-emphasis mx-5">Register for our <span style="color: rgb(98, 92, 214);">Mindfulness</span> Session</h1>
+        <div class="mb-3 mx-5">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name">
+          </div>
+          <div class="mb-3 mx-5">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email ID">
+          </div>
+          <button type="button" class="btn btn-purple btn-lg px-4 me-md-2 mx-5">Submit</button>
+      </div>
+
+      <div class="container px-4 py-5 my-6"></div>
+        <h1 class="display-5 fw-bold text-body-emphasis mx-5">Our Best Article</h1>
+        <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+            <div class="container-fluid py-5 article-img">
+              <h1 class="display-5 fw-bold text-white">Self-Care Strategies: How to Prioritize Your Mental Well-being</h1>
+              <p class="col-md-8 fs-7 text-white">In today’s fast-paced world, taking care of your mental health is more important than ever. This article dives into practical self-care strategies that can help you prioritize your well-being. From setting healthy boundaries to practicing mindfulness and managing stress, discover simple yet effective ways to nurture your mind and body, and regain control over your mental wellness.</p>
+              <button class="btn btn-red btn-lg" type="button">Read Article</button>
+            </div>
+          </div>
+      </div>
+
+
+      <footer class="py-5 bg-dark text-white">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            
+            <ul class="nav flex-column text-white ms-5">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Contact Us</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Terms and Conditions</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Privacy</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">About</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-6 col-md-2 mb-3">
+            
+            <ul class="nav flex-column text-white">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Register for Meetups</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Share your Stories</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Yoga groups</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Meditation groups</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white"></a></li>
+            </ul>
+          </div>
+    
+          
+    
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>© 2024 Company, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+          </ul>
+        </div>
+      </footer>
+    
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="mentalHealth.js"></script>
