@@ -144,7 +144,7 @@ app.use(express.urlencoded({ extended: true })); // for parsing application/x-ww
 
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, 'mentalHealth.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
   });
 // Define routes for login and signup
 app.get('/loginPage.html', (req, res) => {
@@ -202,7 +202,7 @@ app.post('/login', async (req, res) => {
             const user = result.rows[0];
             const isMatch = await bcrypt.compare(password, user.password);
             if (isMatch) {
-                return res.redirect('mentalHealth.html');
+                return res.redirect('index.html');
             }
             return res.status(401).send('Invalid credentials');
         }
@@ -215,7 +215,7 @@ app.post('/login', async (req, res) => {
 
 // Define the home route
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'mentalHealth.html')); // Serve the main page
+    res.sendFile(path.join(__dirname, 'index.html')); // Serve the main page
 });
 
 // POST endpoint to handle form submission
