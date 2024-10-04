@@ -119,15 +119,7 @@ const client = new Client({
     port : 5432,                   // PostgreSQL port, typically 5432
 });
 
-// const pool = new Pool({
-//     user : "postgres",
-//     password : "anjusql#2004",
-//     database : "secrets",
-//     host : "localhost",
-//     port : 5432,                 // Default PostgreSQL port
-// });
 
-// Connect to the PostgreSQL database
 client.connect((err) => {
     if (err) {
         console.error('Database connection error:', err.stack);
@@ -172,15 +164,13 @@ app.post('/signup', async (req, res) => {
 
    
     try {
-        
-        
-    const checkResult = await client.query("select * from myuser where email = $1", [email] );
+      const checkResult = await client.query("select * from myuser where email = $1", [email] );
     if(checkResult.rows.length > 0)
     {
       console.log("Email already exist, Trying logging in");
       return res.status(400).send("Email already exists, try logging in.");
     } else {
-      const result = await client.query("INSERT INTO myuser(email, password) VALUES ($1, $2)",[email,password]);
+      const result = await client.query("INSERT INTO myuser(name, email, password) VALUES ($1, $2, $3)",[name,email,hashedPassword]);
       console.log(result);
       res.send('User registered successfully');
     }
