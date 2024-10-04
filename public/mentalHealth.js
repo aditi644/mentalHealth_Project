@@ -14,6 +14,16 @@ document.getElementById('loginForm').addEventListener('submit', async function (
       body: JSON.stringify({ email, password }),
   });
 
+  if (response.ok) {
+    // If login is successful, change the button text
+    document.getElementById('loginButton').innerText = 'Logged In';
+    // Optionally, you can disable the button to prevent further clicks
+    document.getElementById('loginButton').disabled = true;
+} else {
+    // Handle login failure (show error message or something)
+    alert('Login failed. Please check your credentials.');
+}
+
   const data = await response.json();
   console.log(data); // Handle the response accordingly
 });

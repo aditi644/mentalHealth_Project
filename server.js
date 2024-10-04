@@ -95,6 +95,9 @@ import path from 'path';
 import { fileURLToPath } from 'url'; // To handle __dirname with ES modules
 import pkg from 'pg'; // Import the pg module as a default export
 const { Client } = pkg; 
+import pg from 'pg';
+const { Pool } = pg; 
+
 import bodyParser from 'body-parser';
 import bcrypt from 'bcrypt';
 
@@ -114,6 +117,14 @@ const client = new Client({
     database : "secrets",
     host : "localhost",
     port : 5432,                   // PostgreSQL port, typically 5432
+});
+
+const pool = new Pool({
+    user : "postgres",
+    password : "anjusql#2004",
+    database : "secrets",
+    host : "localhost",
+    port : 5432,                 // Default PostgreSQL port
 });
 
 // Connect to the PostgreSQL database
@@ -178,7 +189,7 @@ app.post('/login', async (req, res) => {
             const isMatch = await bcrypt.compare(password, user.password);
             if (isMatch) {
                 return res.send('Login successful');
-                res.redirect('/mentalHealth.html');
+                
             }
             return res.status(401).send('Invalid credentials');
         }
@@ -192,6 +203,22 @@ app.post('/login', async (req, res) => {
 // Define the home route
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'mentalHealth.html')); // Serve the main page
+});
+
+// POST endpoint to handle form submission
+app.post('/register', async (req, res) => {
+    const { name, email } = req.body;
+
+    try {
+        // Insert the data into the PostgreSQL database
+        await pool.query("INSERT INTO mindfulness_sessions (name, email) VALUES ($1, $2)", [name, email]);
+
+        // Send a success response
+        res.send("Registration successful!");
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server error");
+    }
 });
 
 // Start the server
