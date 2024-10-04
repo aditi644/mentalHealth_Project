@@ -25,7 +25,7 @@
             <li><a href="supportGroups.html" class="nav-link px-4">Support Groups</a></li>
             <li><a href="#articles" class="nav-link px-4">Articles</a></li>
             <li><a href="#" class="nav-link px-4">Expert Section</a></li>
-            <li><a href="aboutUs.html" class="nav-link px-4">About</a></li>
+            <li><a href="./aboutUs.html" class="nav-link px-4">About</a></li>
         </ul>
 
         <div class="col-md-3 text-end d-flex col-sm-12">
@@ -68,16 +68,19 @@
     
       <div class="container-fluid px-4 py-5 my-6">
         <h1 class="display-5 fw-bold text-body-emphasis mx-5">Register for our <span style="color: rgb(98, 92, 214);">Mindfulness</span> Session</h1>
+        <form action="/register" method="POST">
         <div class="mb-3 mx-5">
-            <label for="exampleFormControlInput1" class="form-label">Name</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter your name">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name = "name" placeholder="Enter your name">
           </div>
           <div class="mb-3 mx-5">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email ID">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email ID">
           </div>
-          <button type="button" class="btn btn-purple btn-lg px-4 me-md-2 mx-5">Submit</button>
+          <button type="submit" class="btn btn-purple btn-lg px-4 me-md-2 mx-5">Submit</button>
+        </form>
       </div>
+   
 
       <div class="container px-4 py-5 my-6"></div>
         <h1 class="display-5 fw-bold text-body-emphasis mx-5" id = "articles">Our Best Article</h1>
