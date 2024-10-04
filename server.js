@@ -119,13 +119,13 @@ const client = new Client({
     port : 5432,                   // PostgreSQL port, typically 5432
 });
 
-const pool = new Pool({
-    user : "postgres",
-    password : "anjusql#2004",
-    database : "secrets",
-    host : "localhost",
-    port : 5432,                 // Default PostgreSQL port
-});
+// const pool = new Pool({
+//     user : "postgres",
+//     password : "anjusql#2004",
+//     database : "secrets",
+//     host : "localhost",
+//     port : 5432,                 // Default PostgreSQL port
+// });
 
 // Connect to the PostgreSQL database
 client.connect((err) => {
@@ -142,6 +142,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Parse incoming request bodies in a middleware before your handlers
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, 'mentalHealth.html'));
+  });
 // Define routes for login and signup
 app.get('/loginPage.html', (req, res) => {
     res.sendFile(path.join(__dirname, '/loginPage.html')); // Serve the login page
@@ -166,30 +170,39 @@ app.post('/signup', async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const query = 'INSERT INTO myuser (name, email, password) VALUES ($1, $2, $3)';
+   
     try {
         
-        await client.query(query, [name, email, hashedPassword]);
-        res.send('User registered successfully');
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Error registering user');
+        
+    const checkResult = await client.query("select * from myuser where email = $1", [email] );
+    if(checkResult.rows.length > 0)
+    {
+      console.log("Email already exist, Trying logging in");
+      return res.status(400).send("Email already exists, try logging in.");
+    } else {
+      const result = await client.query("INSERT INTO myuser(email, password) VALUES ($1, $2)",[email,password]);
+      console.log(result);
+      res.send('User registered successfully');
     }
+}
+    catch(err)
+  {
+    console.log(err);
+    res.status(500).send('Server error');
+  }
 });
 
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
    
 
-    const query = 'SELECT * FROM myuser WHERE email = $1';
     try {
-        const result = await client.query(query, [email]);
+        const result = await client.query('SELECT * FROM myuser WHERE email = $1', [email]);
         if (result.rows.length > 0) {
             const user = result.rows[0];
             const isMatch = await bcrypt.compare(password, user.password);
             if (isMatch) {
-                return res.send('Login successful');
-                
+                return res.redirect('mentalHealth.html');
             }
             return res.status(401).send('Invalid credentials');
         }
@@ -211,7 +224,7 @@ app.post('/register', async (req, res) => {
 
     try {
         // Insert the data into the PostgreSQL database
-        await pool.query("INSERT INTO mindfulness_sessions (name, email) VALUES ($1, $2)", [name, email]);
+        await client.query("INSERT INTO mindfulness_sessions (name, email) VALUES ($1, $2)", [name, email]);
 
         // Send a success response
         res.send("Registration successful!");
