@@ -137,7 +137,7 @@ client.connect((err) => {
 });
 
 // Serve static files (like CSS and JS) from the 'public' folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
 
 // Parse incoming request bodies in a middleware before your handlers
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
