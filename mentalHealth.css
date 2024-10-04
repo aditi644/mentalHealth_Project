@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    list-style-type: none;
+}
+
+.article-img{
+    background-image: url(./Images/breathe.jpg);
+    background-size: cover;
+    max-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.btn-custom{
+    background-color: bisque;
+}
+
+.btn-red{
+    background-color: rgb(236, 88, 88);
+}
+
+.btn-purple{
+    background-color: rgb(163, 159, 244);
+}
+
+.div-gradient {
+    background: linear-gradient(45deg, #959191, #fcfbfb);
+    color: white;
+  }
+
+.btn-orange{
+    background-color: #e6c244;
+    color: white;
+}
+
+.gradient-custom-3 {
+    /* fallback for old browsers */
+    background: #84fab0;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+    }
+    .gradient-custom-4 {
+    /* fallback for old browsers */
+    background: #84fab0;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+    }
